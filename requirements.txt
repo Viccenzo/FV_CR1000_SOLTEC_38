@@ -1,0 +1,7 @@
+pandas
+datetime
+sqlalchemy
+python-dotenv
+paho-mqtt
+requests
+psycopg2

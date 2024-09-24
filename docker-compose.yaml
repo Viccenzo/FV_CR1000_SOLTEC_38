@@ -1,0 +1,12 @@
+services:
+  
+  fv_cr1000_soltec_data_collector:
+    container_name: fv_cr1000_soltec_data_collector
+    build: .
+    restart: always
+    image: viccenzo/fv_cr1000_soltec_data_collector
+    healthcheck:
+      test: ["CMD", "sh", "-c", "test $(find /tmp/heartbeat.txt -mmin -60)"]
+      interval: 300s
+      timeout: 10s
+      retries: 3
